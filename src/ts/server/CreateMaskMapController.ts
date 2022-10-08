@@ -39,9 +39,9 @@ export class CreateMaskMapController {
                 height,
                 channels: 4
             }
-        }).toFormat("png", {compressionLevel: 6}).toBuffer();
+        }).toFormat("png", {compressionLevel: 9}).toBuffer();
         const image = `data:image/png;base64,${compositedFile.toString('base64')}`
-        response.send({image})
+        response.contentType('png').send({image})
     }
 
     private static async putIntoChannel(inputSharp: sharp.Sharp, outputImage: Buffer, offset: number, invert: boolean = false) {
