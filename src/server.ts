@@ -15,7 +15,7 @@ console.log("SERVER:", process.env.NODE_ENV);
 const app = express();
 
 // find available port (if not 3000)
-const port = 3002;
+const port = 3003;
 const host = `http://127.0.0.1:${port}`;
 
 /*-------------------*/
