@@ -1,10 +1,11 @@
 const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     mode: 'development',
     entry: {
-        'public/client': './src/ts/index.tsx',
+        'client': './src/ts/index.tsx',
     },
     devtool: 'inline-source-map',
     module: {
@@ -13,13 +14,18 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
-            }, {
+            },
+            {
                 test: /\.html$/i,
                 loader: "html-loader",
             },
             {
                 test: /\.css$/i, use: ['style-loader', 'css-loader']
-            }
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                type: 'asset/resource',
+            },
         ]
     },
     resolve: {
@@ -42,14 +48,15 @@ module.exports = {
         }
     },
     output: {
+        path: path.resolve(__dirname, "dist/public"),
         filename: '[name].js',
         chunkFilename: '[name].js',
     },
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
-                {from: 'src/html/index.html', to: 'public/index.html'},
-                {from: 'src/html/index.css', to: 'public/index.css'},
+                {from: 'src/html/index.html', to: 'index.html'},
+                {from: 'src/html/index.css', to: 'index.css'},
             ]
         })
     ]

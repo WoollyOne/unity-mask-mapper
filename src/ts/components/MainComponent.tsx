@@ -4,6 +4,7 @@ import DropzoneComponent, {DropzoneFile} from "./dropzone/DropzoneComponent";
 import {MapType} from "../maptype";
 import UploadedFileDisplayComponent from "./uploadedfiledisplay/UploadedFileDisplayComponent";
 import GeneratedFileDisplayComponent from "./generatedfiledisplay/GeneratedFileDisplayComponent";
+import koFiButton from "../../img/ko-fi-button.png";
 
 type MainComponentState = {
     uploadedFiles: DropzoneFile[],
@@ -95,6 +96,14 @@ export default class MainComponent extends React.Component<MainComponentProps, M
         return warningMessages;
     }
 
+    private onDonationButtonClicked() {
+        const a = document.createElement('a');
+        a.href = "https://Ko-fi.com/woollyone";
+        a.target = "_blank";
+        a.click();
+        a.remove();
+    }
+
     render() {
         const uploadedFileComponents = this.state.uploadedFiles.map((file, i) =>
             <UploadedFileDisplayComponent dropzoneFile={file} onMapTypeChanged={this.onMapTypeChanged.bind(this)}
@@ -104,7 +113,16 @@ export default class MainComponent extends React.Component<MainComponentProps, M
         )
         return (
             <div className="container">
-                <div className="header"><h1>Unity Mask Mapper by WoollyOne</h1></div>
+                <div className="header">
+                    <h1>Unity Mask Mapper by WoollyOne</h1>
+                    <img
+                        onClick={this.onDonationButtonClicked.bind(this)}
+                        className="ko-fi-button"
+                        src={koFiButton}
+                        width="150"
+                        height="41"
+                    />
+                </div>
                 <div>{warningMessages}</div>
                 <div className="item-container">
                     <DropzoneComponent disabled={this.state.uploadedFiles.length === 4}

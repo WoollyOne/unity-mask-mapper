@@ -35,3 +35,9 @@
     width: 100%;
     margin-top: -8px;
 }
+
+.ko-fi-button {
+    user-select: none;
+    margin-left: 16px;
+    align-self: center;
+}
