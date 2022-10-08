@@ -1,0 +1,26 @@
+.dropzone {
+    border-radius: 8px;
+    border: dashed 4px whitesmoke;
+    max-width: 100%;
+    min-height: 128px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+    transition: all 0.5s;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.dropzone-inner-text {
+    align-self: center;
+}
+
+.dropzone.disabled {
+    color: #9a9a9a;
+    border: solid 2px #9a9a9a;
+    height: 64px;
+    transition: all 0.5s;
+    flex-grow: 0;
+    cursor: unset;
+}

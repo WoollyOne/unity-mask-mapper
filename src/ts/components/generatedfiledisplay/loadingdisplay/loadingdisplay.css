@@ -1,0 +1,29 @@
+.loading-square {
+    height: 100px;
+    width: 100px;
+    animation: rotate-square 1s ease-in-out;
+    animation-iteration-count: infinite;
+    background-color: rgba(245, 245, 245, 50%);
+    border: 8px solid rgba(245, 245, 245, 50%);
+}
+
+@keyframes rotate-square {
+    0% {
+        transform: rotate3d(0, 0, 0, 0deg);
+        border-radius: 0;
+        background-color: rgba(245, 245, 245, 50%);
+        border: 0 solid rgba(245, 245, 245, 0);
+    }
+    50% {
+        transform: rotate3d(0.3333, 0.3333, 0.3333, 180deg);
+        border-radius: 75%;
+        background-color: transparent;
+        border: 8px solid rgba(245, 245, 245, 50%);
+    }
+    100% {
+        transform: rotate3d(0.5, 0, 0.5, 360deg);
+        border-radius: 0;
+        background-color: rgba(245, 245, 245, 50%);
+        border: 0 solid rgba(245, 245, 245, 0);
+    }
+}

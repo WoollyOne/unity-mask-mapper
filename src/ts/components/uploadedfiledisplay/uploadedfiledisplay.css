@@ -1,0 +1,53 @@
+.uploaded-file-display {
+    border: solid 4px whitesmoke;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+    width: 300px;
+}
+
+.uploaded-file-display > img {
+    user-select: none;
+}
+
+.file-info {
+    padding: 8px;
+    border-radius: 8px 8px 0 0;
+    background-color: #2a2a2a;
+}
+
+.file-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.file-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+label {
+    margin: 4px;
+    display: block;
+}
+
+.delete-button, .delete-button:visited, .delete-button:hover, .delete-button:active {
+    color: inherit;
+    text-underline: none;
+    margin-left: 4px;
+}
+
+.map-type-select {
+    margin-left: 8px;
+    height: 24px;
+    width: 150px;
+    background-color: #7a7a7a;
+    color: white;
+    border-radius: 4px;
+    padding: 4px;
+    font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
