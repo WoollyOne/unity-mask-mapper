@@ -39,7 +39,7 @@ export class CreateMaskMapController {
                 height,
                 channels: 4
             }
-        }).toFormat("png", {compressionLevel: 3}).toBuffer();
+        }).toFormat("png", {compressionLevel: 6}).toBuffer();
         const image = `data:image/png;base64,${compositedFile.toString('base64')}`
         response.send({image})
     }
