@@ -49,10 +49,10 @@ export default class GeneratedFileDisplayComponent extends React.Component<Gener
 
         const firstFile = this.props.uploadedFiles[0];
         const [width, height] = [firstFile.width, firstFile.height]
-        let response;
+        let responseJson = {"image": ""};
 
         try {
-            response = await fetch('/mask-map', {
+            const response = await fetch('/mask-map', {
                 method: 'POST', headers: {
                     'Content-Type': 'application/json'
                     // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -67,14 +67,15 @@ export default class GeneratedFileDisplayComponent extends React.Component<Gener
                     "height": firstFile.height,
                 }),
             });
-        } catch (error) {
-            console.error("Internal server error");
-            return undefined;
-        }
+
 
         const responseJson = await response.json();
         if (responseJson == null || responseJson["image"] == null) {
             console.error("Failed to create mask map.");
+            return undefined;
+        }
+        } catch (error) {
+            console.error("Internal server error");
             return undefined;
         }
 
