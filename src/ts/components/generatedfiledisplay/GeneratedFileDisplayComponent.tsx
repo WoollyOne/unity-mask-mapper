@@ -69,7 +69,7 @@ export default class GeneratedFileDisplayComponent extends React.Component<Gener
             });
 
 
-        const responseJson = await response.json();
+        responseJson = await response.json();
         if (responseJson == null || responseJson["image"] == null) {
             console.error("Failed to create mask map.");
             return undefined;
