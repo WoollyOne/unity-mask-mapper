@@ -111,7 +111,7 @@ export default class DropzoneComponent extends React.Component<DropzoneComponent
         const nameWithoutExtension = name.split(".")[0].toLowerCase().replace(/[^a-z0-9]/gi, "");
         const baseMatchPrefix = "(.*)";
         const baseMatchSuffix = "(map)?(.*)";
-        if (nameWithoutExtension.match(`${baseMatchPrefix}(ambientocclusion|ao|ambient|occlusion)${baseMatchSuffix}`)) {
+        if (nameWithoutExtension.match(`${baseMatchPrefix}(ambient|occlusion|ao|occ)${baseMatchSuffix}`)) {
             return MapType.AmbientOcclusion;
         }
 

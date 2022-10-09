@@ -114,8 +114,10 @@ export default class MainComponent extends React.Component<MainComponentProps, M
         return (
             <div className="container">
                 <div className="header">
+                    <div className="beta-label">BETA</div>
                     <h1>Unity Mask Mapper by WoollyOne</h1>
                     <img
+                        alt="I like money"
                         onClick={this.onDonationButtonClicked.bind(this)}
                         className="ko-fi-button"
                         src={koFiButton}

@@ -31,13 +31,22 @@
     padding: 8px;
     background-color: #2a2a2a;
     display: flex;
-    justify-content: center;
     width: 100%;
     margin-top: -8px;
+    justify-content: space-between;
+}
+
+.beta-label {
+    border: solid 2px whitesmoke;
+    border-radius: 8px;
+    padding: 8px;
+    margin-left: 16px;
+    align-self: center;
 }
 
 .ko-fi-button {
     user-select: none;
-    margin-left: 16px;
+    margin-right: 16px;
     align-self: center;
+    cursor: pointer;
 }

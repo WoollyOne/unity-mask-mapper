@@ -16,15 +16,17 @@
     align-items: center;
 }
 
-.generated-file-display > h2 {
-    padding: 4px 8px;
-    border-radius: 8px;
+.output-header {
     background-color: #2a2a2a;
+    width: 284px;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .file-display-container {
     display: flex;
     justify-content: center;
+    height: 100%;
 }
 
 .file-display-container > div {
@@ -34,6 +36,17 @@
 .file-display-image {
     background-size: contain;
     cursor: pointer;
+    background-repeat: round;
+    background-position: center;
+}
+
+.output-header > h3 {
+    margin: 0;
+}
+
+.download-button {
+    cursor: pointer;
+    margin: 8px 0;
 }
 
 .checker {

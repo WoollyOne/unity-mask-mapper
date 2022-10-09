@@ -47,7 +47,7 @@ export class CreateMaskMapController {
     private static async putIntoChannel(inputSharp: sharp.Sharp, outputImage: Buffer, offset: number, invert: boolean = false) {
         // Invert the input image if necessary
         if (invert) {
-            inputSharp = inputSharp.negate();
+            inputSharp = inputSharp.negate({alpha: false});
         }
 
         // Add fourth channel if necessary

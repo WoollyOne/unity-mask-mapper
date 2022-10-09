@@ -103,7 +103,10 @@ export default class GeneratedFileDisplayComponent extends React.Component<Gener
 
         return (
             <div className="generated-file-display">
-                <h2>Output Mask Map</h2>
+                <div className="output-header">
+                    <h3>Output Mask Map</h3>
+                    <p className="download-button" onClick={this.downloadOutputImage.bind(this)}>Click to download</p>
+                </div>
                 <div className="file-display-container">
                     {isLoading && <LoadingDisplayComponent/>}
                     {outputFile && !isLoading &&
